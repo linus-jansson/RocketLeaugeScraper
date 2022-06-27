@@ -12,9 +12,7 @@ req = requests.Session()
 response = req.get("https://support.rocketleague.com/hc/en-us/articles/360029832054-Rocket-League-Car-Hitboxes", headers=header)
 
 if response.status_code == 403:
-    print(response.status_code)
-    print("rejected")
-    exit()
+    raise Exception(f"{response.status_code} rejected")
 
 soupContent = BeautifulSoup(response.content, 'html.parser')
 
