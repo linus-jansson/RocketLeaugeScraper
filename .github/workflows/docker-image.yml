@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image
     - name: Run the Docker image in a conainer
-      run: docker run --rm -it my-image
+      run: docker run --rm my-image
